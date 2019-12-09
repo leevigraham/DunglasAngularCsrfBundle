@@ -12,6 +12,7 @@ namespace Dunglas\AngularCsrfBundle\Form\Extension;
 use Dunglas\AngularCsrfBundle\Csrf\AngularCsrfTokenManager;
 use Dunglas\AngularCsrfBundle\Routing\RouteMatcherInterface;
 use Symfony\Component\Form\AbstractTypeExtension;
+use Symfony\Component\Form\Extension\Core\Type\FormType;
 use Symfony\Component\HttpFoundation\RequestStack;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
@@ -101,8 +102,8 @@ class DisableCsrfExtension extends AbstractTypeExtension
     /**
      * {@inheritdoc}
      */
-    public static function getExtendedTypes()
+    public static function getExtendedTypes(): iterable
     {
-        return array('Symfony\Component\Form\Extension\Core\Type\FormType');
+        return [FormType::class];
     }
 }
